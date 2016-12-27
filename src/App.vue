@@ -2,11 +2,14 @@
 <div id="app">
   <nav>
     <div class="nav_bar">
-      <ul>
+
         <li>
           <router-link to="/movielist">列表</router-link>
         </li>
-      </ul>
+        <li>
+          <router-link to="/movielist">列表</router-link>
+        </li>
+
     </div>
   </nav>
 
@@ -15,8 +18,6 @@
 </template>
 
 <script>
-import Hello from './components/Hello'
-import MovieList from './components/MovieList'
 
 export default {
   name: 'app'

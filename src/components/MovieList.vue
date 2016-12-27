@@ -1,14 +1,18 @@
 <template lang="html">
   <div id="movieList">
     <div class="movie_list-wrapper">
+
       <div class="" v-if="showLoading">
         Loading...
       </div>
-      <div class="movie-wrapper"  v-for="pic in pics">
-        <img :src="pic" alt="" />
-      </div>
-    </div>
 
+      <div class="movie-wrapper"  v-for="movie in movies">
+        <router-link :to="{name: 'movieDetail', params: {id :movie.id}}">
+          <img :src="movie.images.medium" alt="" />
+        </router-lin>
+      </div>
+
+    </div>
   </div>
 </template>
 
@@ -18,17 +22,16 @@ export default {
   name: 'movieList',
   data() {
     return {
-      pics: [],
-      showLoading: true
+    movies:[],
+    showLoading: true
     }
   },
   mounted() {
     axios.get('/api/movie/in_theaters')
       .then((response) => {
         this.showLoading = false
-          // console.log(JSON.stringify(response));
-        response.data.subjects.map((sub) => {
-          this.pics.push(sub.images.medium)
+        response.data.subjects.map((subject) => {
+          this.movies.push(subject)
         })
       })
       .catch(function(error) {
