@@ -4,11 +4,11 @@
     <div class="nav_bar">
 
         <li>
-          <router-link to="/movielist">列表</router-link>
+          <router-link to="/movielist">电影列表</router-link>
         </li>
-        <li>
+        <!-- <li>
           <router-link to="/movielist">列表</router-link>
-        </li>
+        </li> -->
 
     </div>
   </nav>
@@ -64,6 +64,7 @@ nav {
     display: flex;
     align-items: center;
     height: 50px;
+    padding: 0 10px;
     a:active {
         color: #35966b;
     }
